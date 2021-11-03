@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="discount">
+	<insert id="insertAddSale">
+		insert into discount values
+		(#{showId},#{disCountRate},#{disCountStartDate},#{disCountEndDate},#{disCountImg}, #{showName},#{showGenre})
+	</insert>
+
+	<select id="checkCnt"  resultType="_int">
+		select count(*) from discount
+	</select>
+	
+	<delete id="deleteAddSale">
+		delete from discount  where discount_end_date in (select min(discount_end_date) from discount)
+	</delete>
+	
+	<select id="selectdcList" resultMap="discountMap">
+		select * from discount order by discount_start_date asc
+	</select>
+	
+	<resultMap type="map" id="discountMap">
+		<id column="showid" property="showId"/>
+		<result column="discount_rate" property="disCountRate"/>
+		<result column="discount_start_date" property="disCountStartDate"/>
+		<result column="discount_end_date" property="disCountEndDate"/>
+		<result column="discount_img" property="disCountImg"/>
+		<result column="show_name" property="showName"/>
+		<result column="show_genre" property="showGenre"/>
+	</resultMap>
+	
+	<select id="selectOneDc" resultType="discount">
+		select * from discount where showid=#{showId}
+	</select>
+	
+	
+</mapper>

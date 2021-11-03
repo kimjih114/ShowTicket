@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+#container {
+	position: relative;
+	font-family: "휴먼모음T";
+	padding: 30px;
+}
+
+#inner {
+	height: 60%;
+	border: 1px solid black;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+/* 
+.event_cont{margin-top:-240px !important}
+.event_cont .inner{padding:280px 0 253px !important}
+.nav-pills .nav-link.select{
+    color: #fff;
+    background-color: #8f01a3;
+}
+.nav-pills .nav-font{
+	font: 15px bold;
+	padding: .7rem 1rem;
+	border-radius: 0;
+}
+
+.nav-pills .nav-link.default{
+	color: #8f01a3;
+    border-left: 1px solid #8f01a3;
+}
+
+.nav-pills .nav-item:first-child .nav-link.default{
+	color: #8f01a3;
+	border: none;
+}
+
+.nav-pills{
+	border: 1px solid #8f01a3;
+    border-radius: .25rem;
+    width:50%;
+	margin:auto;
+}
+ */
+.ListTable {
+	border: 2px solid #D8D8D8;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 15px;
+	overflow: auto;
+}
+
+.ListTable th {
+	background-color: #F2F2F2;
+	font-weigth: bold;
+	border-bottom: 1px solid ligthgray;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 1px solid lightgray;
+}
+
+.ListTable td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #424242;
+	border: 1px solid lightgray;
+	text-align: center;
+	font-weight: 400;
+}
+
+.ListTable input[type=checkbox] {
+	-ms-transform: scale(1.5); /* IE */
+	-moz-transform: scale(1.5); /* FF */
+	-webkit-transform: scale(1.5); /* Safari and Chrome */
+	-o-transform: scale(1.5); /* Opera */
+	padding: 5px;
+}
+
+#photo {
+	width: 20%;
+	height: 270px;
+	/* border: 1px solid black; */
+	margin: 0px;
+	float: left;
+}
+
+#detail {
+	width: 75%;
+	margin-left: 40px;
+	float: left;
+}
+
+#detail #service {
+	width: 110px;
+}
+
+#detail #title {
+	width: 200px;
+}
+#detail #start{
+	width:130px;
+}
+#detail #finish{
+	width:130px;
+}
+
+#search {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+#search .smaill-title {
+	margin-left: 40px;
+}
+
+#enroll {
+	width: 70%;
+	margin-left: 25%;
+	margin-top: 5%;
+}
+
+#enroll .enrollText {
+	width: 177px;
+	height: 40px;
+	padding: 4px;
+	border-radius: 5px;
+	border: 1px solid #8f01a3;
+	font-size: 20px;
+}
+
+#changebutton {
+	width: 100px;
+	height: 40px;
+	color: white;
+	background-color: #8f01a3;
+	border: 1px solid #8f01a3;
+	font-size: 15px;
+	font-weight: bold;
+	float: right;
+	margin-right: 50px;
+}
+
+#goList {
+	width: 100px;
+	height: 35px;
+	color: white;
+	background-color: #A4A4A4;
+	border: 1px solid #A4A4A4;
+	font-size: 15px;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-top: 10px;
+	float: right;
+}
+
+#okbutton {
+	width: 80px;
+	height: 35px;
+	color: white;
+	background-color: #8f01a3;
+	border: 1px solid #8f01a3;
+	font-size: 15px;
+	font-weight: bold;
+	margin-right: 20px;
+	margin-top: 10px;
+	float: right;
+}
+/* 이벤트 당첨자 발표 글쓰기 페이지 */
+#eventFrm {
+	margin-top: 30%;
+}
+
+#eventFrm .main-title{
+	font-family: 'Gothic A1', sans-serif;
+	font-size: 40px;
+	color: black;
+	font-weight: bold;
+}
+
+#memberTable {
+	margin: auto;
+}
+
+#memberTable {
+	width: 90%;
+	border-top: 2px solid #BDBDBD;
+	border-bottom: 2px solid #BDBDBD;
+	text-align: center;
+	margin: auto;
+	font-size: 15px;
+}
+
+#memberTable th {
+	font-weight: 700;
+	border-bottom: 2px solid #E6E6E6;
+	color: #424242;
+	background-color: #E6E6E6;
+	height: 30px;
+}
+
+#memberTable tr {
+	border-bottom: 1.5px solid #E6E6E6;
+}
+
+#write {
+	padding-top: 30px;
+	width: 90%;
+}
+
+#write #title {
+	font-weight: bold;
+	font-size: 18px;
+	color: #585858;
+}
+
+#write .enrollText {
+	width: 300px;
+	height: 40px;
+	padding: 4px;
+	border-radius: 5px;
+	border: 1px solid #8f01a3;
+	font-size: 20px;
+	margin-left: 15px;
+}
+
+#write #content {
+	font-weight: bold;
+	font-size: 18px;
+	color: #585858;
+}
+
+#write #cText {
+	width: 100%;
+	height: 300px;
+	padding: 4px;
+	border-radius: 5px;
+	border: 1px solid #8f01a3;
+	font-size: 20px;
+	margin-left: 15px;
+	resize: none;
+}
+
+.eventFrm {
+	margin-bottom: 40px;
+}
+
+.eventFrm #finish {
+	width: 100px;
+	height: 35px;
+	color: white;
+	background-color: #8f01a3;
+	border: 1px solid #8f01a3;
+	font-size: 15px;
+	font-weight: bold;
+	margin-right: 20px;
+	margin-top: 20px;
+	float: right;
+}
+
+#forbutton {
+	float: right;
+	width: 100%;
+}
+
+#List {
+	width: 100px;
+	height: 35px;
+	color: white;
+	background-color: #8f01a3;
+	border: 1px solid #8f01a3;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 50px;
+	float: right;
+}
+
+input {border: none; }
+::-webkit-input-placeholder { text-align:right;pointer-events: none; }
+#inputText{width:100px;    display: contents;}
+.enrollText{width:180px;}
+::-webkit-scrollbar-thumb {background-color:#8f01a3;border-radius: 10px;}
+div.search{    display: inline-block;  margin-bottom: 23px;}
+
+

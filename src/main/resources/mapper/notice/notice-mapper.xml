@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	<select id="selectNoticeTicketOpenList" resultType="notice">
+		select *
+		from notice
+		where notice_category ='t'
+		order by notice_enrolldate desc
+	</select>
+
+	<resultMap type="notice" id="notice">
+		<id column="notice_no" property="noticeNo"/>
+		<result column="notice_title" property="noticeTitle"/>
+		<result column="notice_content" property="noticeContent"/>
+		<result column="notice_enrolldate" property="noticeEnrollDate"/>
+		<result column="notice_category" property="noticeCategory"/>
+		<result column="notice_count" property="noticeCount"/>
+		<result column="play_id" property="playId"/>
+	</resultMap>
+	
+	<!-- <insert id="insertNoticeTicketOpen">
+		insert into notice
+		(notice_no,notice_title,notice_content,notice_enrolldate,notice_category,notice_count,play_name,play_open,play_place,play_poster) 
+		values(seq_notice_no.nextval,'뮤지컬 스위니토드','뮤지컬 스위니토드 티켓이 오픈했습니다.',sysdate,'t',0,'스위니토드','2019-01-01','세종문화회관','poster');
+	
+	
+	</insert> -->
+	
+	<select id="selectOne" resultType="notice">
+		select *
+		from notice
+		where notice_no = #{noticeNo}
+	</select>
+	
+	<insert id="noticeWrite">
+		insert into notice
+		values (seq_notice_no.nextval, #{noticeTitle}, #{noticeContent}, default, #{noticeCategory}, default, #{playId})
+	</insert>
+	
+	<update id="noticeUpdate">
+		update notice 
+		set notice_title = #{noticeTitle}, notice_category=#{noticeCategory}, notice_content=#{noticeContent}
+		where notice_no = #{noticeNo}
+	</update>
+	
+	<delete id="noticeDelete">
+		delete from notice
+		where notice_no = #{noticeNo}
+	</delete>
+	
+	<update id="increaseReadCount">
+		update notice
+		set notice_count = notice_count + 1
+		where notice_no = #{noticeNo}
+	</update>
+	
+	<select id="noticeList" resultType="notice">
+		select *
+		from notice
+		<where>
+			<if test="noticeCategory != '' and noticeCategory != null">
+				notice_category = #{noticeCategory}
+			</if>
+			<if test="noticeTitle != '' and noticeTitle != null">
+				notice_title like '%'||#{noticeTitle}||'%'
+			</if>
+		</where>
+		order by notice_enrolldate desc
+	</select>
+	
+	<insert id="insertFollow">
+		insert into follow
+		values(#{playId}, #{memberId})
+	</insert> 
+	
+	<select id="selectList" resultType="notice">
+		<![CDATA[
+		select A.*
+		from (select notice_no, notice_title, notice_category
+				from notice
+				order by notice_enrolldate desc) A
+		where rownum <= 5
+		]]>
+	</select>
+	
+</mapper>

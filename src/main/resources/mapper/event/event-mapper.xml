@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="event">
+	<select id="searchEventList"
+			resultMap="eventMap">
+		select *
+		from event
+		where (event_title like '%' || #{queryKeyword} || '%' or event_content like '%' || #{queryKeyword} || '%')
+	</select>
+	<resultMap type="map" id="eventMap">
+		<id column="event_no" property="eventNo" />
+		<result column="event_title" property="eventTitle" />
+		<result column="event_content" property="eventContent" />
+		<result column="event_start_date" property="eventStartDate" />
+		<result column="event_end_date" property="eventEndDate" />
+		<result column="original_file_name" property="originalFileName" />
+		<result column="renamed_file_name" property="renamedFileName" />
+		<result column="announcement_date" property="announcementDate" />
+		<result column="event_status" property="statusDate" />
+		<result column="event_img" property="eventImg" />
+	</resultMap>
+
+	<insert id="insertEventEnd">
+		insert into event values
+		(seq_event_no.nextval,#{eventTitle},#{eventContent},
+			#{eventStartDate},#{eventEndDate},#{announcementDate},
+			#{eventStatus},#{eventDetailDate},#{eventTimeMen},#{showId},#{eventKind},#{eventImg})
+	
+		<selectKey keyProperty="eventNo" resultType="_int" order="AFTER">
+			select seq_event_no.currval from dual
+		</selectKey>
+	</insert>
+	
+	<insert id="insertEAttachment">
+		insert into event_attachment values(seq_event_attachment.nextval,#{eventNo},#{originalFileName},#{renamedFileName})
+	</insert>
+	
+	<select id="selectEventList" resultMap="eventMap">
+		select * from event order by event_no asc
+	</select>
+	<select id="selectOneEvent" resultType="event">
+		select * from event where event_no=#{eventNo}
+	</select>
+	
+	
+	
+</mapper>

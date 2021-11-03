@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<insert id="insertMember">
+		insert into member values
+		( #{memberId}, #{password},
+		#{memberName}, #{email},
+		#{phone}, default, sysdate, default, default, sysdate, default)
+	</insert>
+
+	<select id="selectOneMember" resultType="member">
+		select * from member
+		where member_id = #{memberId}
+	</select>
+
+	<update id="updateMember">
+		update member
+		<trim prefix="set" suffixOverrides=",">
+			<if test="password != null and password !=''">
+				password= #{password},
+			</if>
+			<if test="memberName != null and memberName !=''">
+				member_name = #{memberName},
+			</if>
+			<if test="email != null and email !=''">
+				email = #{email},
+			</if>
+			<if test="phone != null and phone !=''">
+				phone= #{phone},
+			</if>
+			<if test="memberGrade != null and memberGrade !=''">
+				member_grade= #{memberGrade},
+			</if>
+		</trim>
+
+		where member_id = #{memberId}
+
+	</update>
+
+	<delete id="deleteMember">
+		delete from member where member_id = #{memberId}
+	</delete>
+	<update id="updatePwd" parameterType="Member">
+		UPDATE member SET password = #{password} WHERE member_id = #{memberId}
+
+	</update>
+	<select id="selectReservationList" resultType="ticket">
+		select * from(select rownum rnum, r.* from(select * from ticket order by
+		ticket_enrolldate desc)r)r where rnum between #{startContent} and
+		#{endContent} and ticket_buyer=#{memberLoggedIn}
+	</select>
+	<select id="chkEmailUsable" resultType="_int">
+		select count(*) from member where email = #{email}
+	</select>
+
+	<select id="selectMyPointList" resultType="mypoint">
+		select * from point
+		where member_id = #{memberLoggedIn}
+	</select>
+
+	<select id="selectReservationTerm" resultType="ticket">
+		select ticket_no as ticketNo, ticket_showname as ticketShowName,
+		ticket_enrolldate as ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel,
+		ticket_status as ticketStatus
+		from(select rownum rnum, t.*
+		from(select * from ticket where ticket_buyer=#{memberLoggedIn} and
+		ticket_enrolldate between add_months(sysdate, #{num}) and sysdate
+		order by ticket_enrolldate desc)t)t
+		where rnum between #{startContent} and #{endContent}
+	</select>
+
+	<select id="selectReservationTerm15" resultType="ticket">
+		select ticket_no as ticketNo, ticket_showname as ticketShowName,
+		ticket_enrolldate as ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel,
+		ticket_status as ticketStatus
+		from(select rownum rnum, t.*
+		from(select * from ticket where ticket_buyer=#{memberLoggedIn} and
+		ticket_enrolldate between trunc(sysdate + #{num}) and sysdate order by
+		ticket_enrolldate desc)t)t
+		where rnum between #{startContent} and #{endContent}
+	</select>
+
+	<select id="selectReservationAll" resultType="ticket">
+		select ticket_no as
+		ticketNo, ticket_showname as ticketShowName, ticket_enrolldate as
+		ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel, ticket_status as
+		ticketStatus
+		from(select rownum rnum, t.*
+		from(select * from ticket
+		where ticket_buyer=#{memberLoggedIn} order by ticket_enrolldate
+		desc)t)t
+		where rnum between #{startContent} and #{endContent}
+	</select>
+
+	<select id="selectStandByList" resultType="string">
+		select waiting_showId
+		from waiting where member_id = #{memberLoggedIn}
+	</select>
+	<delete id="deleteMyStandBy">
+		delete from waiting where member_id =
+		#{memberLoggedIn} and waiting_showid = #{showId}
+	</delete>
+
+	<update id="updateReservation">
+		update ticket set ticket_status='N' where ticket_no=#{cancelTNo} and
+		ticket_buyer=#{memberLoggedIn}
+	</update>
+
+	<select id="selectOneTicketByNo" resultMap="wAlarmMap">
+		select ticket_showid,
+		ticket_showname,
+		TO_CHAR(ticket_date, 'YYYY-MM-DD') ticket_date,
+		ticket_time
+		from ticket where ticket_no = #{ticketNo}
+	</select>
+	<resultMap id="wAlarmMap" type="map">
+		<result column="ticket_showId" property="ticketShowId" />
+		<result column="ticket_showname" property="ticketShowName" />
+		<result column="ticket_date" property="ticketDate" />
+		<result column="ticket_time" property="ticketTime" />
+	</resultMap>
+
+	<select id="selectFollow" resultType="string">
+		select * from follow
+		where
+		member_id = #{memberId}
+	</select>
+
+	<delete id="deleteFollow">
+		delete from follow
+		where member_id = #{memberId} and
+		follow_showid = #{playId}
+	</delete>
+
+	<select id="selectRTotalCount" resultType="ticket">
+		select * from ticket
+	</select>
+
+	<select id="selectTotalCountA" resultType="ticket">
+		select ticket_no as
+		ticketNo, ticket_showname as ticketShowName, ticket_enrolldate as
+		ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel, ticket_status as
+		ticketStatus
+		from ticket where ticket_buyer=#{memberLoggedIn} order by
+		ticket_enrolldate desc
+	</select>
+
+	<select id="selectTotalCountT" resultType="ticket">
+		select ticket_no as ticketNo, ticket_showname as ticketShowName,
+		ticket_enrolldate as ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel,
+		ticket_status as ticketStatus
+		from ticket where ticket_buyer=#{memberLoggedIn} and ticket_enrolldate
+		between add_months(sysdate, #{num}) and sysdate order by
+		ticket_enrolldate desc
+	</select>
+
+	<select id="selectTotalCount15" resultType="ticket">
+		select ticket_no as ticketNo, ticket_showname as ticketShowName,
+		ticket_enrolldate as ticketEnrollDate, ticket_date as ticketDate,
+		ticket_count as ticketCount, ticket_cancel as ticketCancel,
+		ticket_status as ticketStatus
+		from ticket where ticket_buyer=#{memberLoggedIn} and ticket_enrolldate
+		between trunc(sysdate + #{num}) and sysdate order by ticket_enrolldate
+		desc
+	</select>
+
+	<select id="findIdByEmail" resultType="string">
+		select member_id
+		from member
+		where member_name=#{memNm} and email=#{memEmail}
+	</select>
+
+	<select id="findIdByPhone" resultType="string">
+		select member_id
+		from
+		member
+		where member_name=#{memNm} and phone=#{inputHp}
+	</select>
+
+	<select id="selectWaitingIdListByShowId" resultType="string">
+		select
+		member_id
+		from waiting
+		where waiting_showid = #{ticketShowId}
+	</select>
+	<update id="updatePoint">
+		update member set point=point*1.5 where member_id=#{memberId}
+	</update>
+	<insert id="insertTicket">
+		insert into ticket
+		(ticket_no,ticket_buyer,ticket_showid,ticket_price,ticket_grade,ticket_date,ticket_place,ticket_count,ticket_enrolldate,
+		ticket_seat,ticket_time,ticket_cancel,ticket_status,pay_no,ticket_showname)
+		values(seq_ticket_no.nextval,#{ticketBuyer},#{ticketShowId},#{ticketPrice},#{ticketGrade},to_date(#{ticketDate}),#{ticketPlace},1,to_date(#{ticketEnrollDate}),#{ticketSeat},#{ticketTime},sysdate,'N',
+		seq_pay_no.nextval,#{ticketShowName});
+	</insert>
+	
+	<select id="countResult" resultType="_int">
+		select count(*) from ticket
+		where ticket_showid = #{ticketShowId} and
+		      ticket_date = #{ticketDate} and
+		      ticket_time like '%'||#{ticketTime}||'%'
+	</select>
+	<select id="getTicketList" resultType="ticket">
+		select * from ticket
+		where ticket_showid = #{ticketShowId} and
+		      ticket_date = #{ticketDate} and
+		      ticket_time like '%'||#{ticketTime}||'%'
+	</select>
+</mapper>

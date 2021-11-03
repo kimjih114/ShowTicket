@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="admin">
+	
+	<insert id="insertReport">
+		insert into report values
+		(SEQ_REPORT_NO.nextval,
+		 '광고글',
+		 #{reportMemberId},
+		 #{receiveMemberId},
+		 #{reviewNo}
+		 )
+	</insert>
+	
+	<select id="checkReport" resultType="_int">
+		select count(*) from report
+		where review_no = #{reviewNo} and
+		      report_member_id = #{reportMemberId}
+	</select>
+	
+	
+	<select id="selectAdminReportList" resultType="report">
+		select * from(select rownum rnum, p.* from(select * from report order by review_no desc)p)p where rnum between #{startContent} and #{endContent}
+	</select>
+	
+	<select id="selectOneAdminReportList" resultType="report">
+		select * from report where report_no = #{reportNo}
+	</select>
+	
+	<select id="selectOneAdminReviewList" resultType="review">
+		select review_content from review where review_no = #{reviewNo}
+	</select>
+	
+	<update id="updateReport">
+		update member set member_119_count = member_119_count+#{cnt} where member_id=#{memberId}
+	</update>
+	
+	<select id="adminMemberList" resultType="member">
+		select member_id as memberId, member_name as memberName, email as email, phone as phone
+		from(select rownum rnum, m.* from(select * from member order by enrolldate desc)m)m where rnum between #{startContent} and #{endContent}
+	</select>
+	
+	<delete id="deleteReport">
+		delete from review where review_no = #{reviewNo}
+	</delete>
+	
+	<delete id="deleteMember">
+		delete from member where member_id = #{memberId}
+	</delete>
+	
+	<select id="selectTotalCount" resultType="report">
+		select * from report
+	</select>
+	
+	<select id="selectMemberTotalCount" resultType="member">
+		select * from member
+	</select>
+	
+	<select id="selectMemberByMemberId" resultType="member">
+		select * from(select rownum rnum2, A.* from (select * from member where member_id like '%'||#{searchKeyword}||'%' order by member_id)A) A where rnum2 between #{startContent} and #{endContent}
+	</select>
+	
+	<select id="selectMemberByMemberName" resultType="member">
+		select * from(select rownum rnumName, B.* from (select * from member where member_name like '%'||#{searchKeyword}||'%' order by member_name) B) B where rnumName between #{startContent} and #{endContent}
+	</select>
+	
+	<select id="FinderSelectTotalContentId" resultType="member">
+		select * from member where member_id like '%'||#{searchKeyword}||'%' order by member_id
+	</select>
+	
+	<select id="FinderSelectTotalContentName" resultType="member">
+		select * from member where member_name like '%'||#{searchKeyword}||'%' order by member_name
+	</select>
+</mapper>

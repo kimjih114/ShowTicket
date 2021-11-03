@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="prizewinner">
+
+	<insert id="winnerPrize">
+		insert into prizewinner values 
+		(seq_prizewinner_no.nextval,#{peventNo},#{prizewinnerName},#{prizePhone})
+		<selectKey keyProperty="prizewinnerNo" resultType="_int" order="AFTER">
+			select seq_prizewinner_no.currval from dual
+		</selectKey>
+	</insert>
+	<select id="selectWinner" resultType="prizewinner">
+		select * from prizewinner where pevent_no=#{eventNo} order by prizewinner_name asc
+	</select>
+
+
+
+
+</mapper>

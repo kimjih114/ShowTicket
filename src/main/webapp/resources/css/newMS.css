@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+.newMusical_wrap{margin-top:50px;border-radius:2px;background:#fff;overflow:hidden;margin-left: -4px;}
+.newMusical_first{background-color: white !important;width: 192px !important;height: 284px !important;box-shadow: 1px 1px 1px 1px #d3d3d3;margin-right: 8px;}
+.newMusical_first img{width: 190px;height: 235px;}

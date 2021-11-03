@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+div.bottom_area{
+	background-color: transparent !important;
+}
+
+div.bottom_area .inner{
+	padding-bottom: 0px;
+	background-color: transparent !important;
+	position: relative;
+}
+
+div.searchFrm{
+
+	display:inline-block;  position:relative; left:155px; top:0px;
+}
+
+select[name="searchCategory"]{
+	width: 100px;
+	height: 35px;
+	display: inline;
+}
+
+#searchKeyword{
+	width: 300px;
+	height: 35px;
+	display: inline;
+}
+
+
+button#searchBtn{
+	height:33px;
+	display: inline;
+}
+
+div.orderWrap{
+	margin: 3px;
+}
+
+select[name="selectOrder"]{
+	width:70px;
+	height: 30px;
+	float:right;
+	margin-bottom:5px;
+}
+
+
+#genreNav{
+	margin-top:39px;
+}
+
+.SHOW_ISSUE_V1_FIRST{
+	border:1px solid #8f01a3;
+	background-color:white !important;
+	width:178px !important;
+	height: 263px !important;
+
+}
+.SHOW_ISSUE_V1_FIRST img{
+	width: 176px;
+height:217px;
+}
+
+.SHOW_ISSUE_V1_FIRST p em{
+ 	color:#8f01a3;
+}
+
+.goods_list{margin-left:-18px;overflow:hidden; clear:both;}
+.goods_list li{float:left;position:relative;overflow:hidden;width:234px;height:374px;padding-bottom:3px;margin:0 0 15px 16px !important;color:#777;box-shadow:1px 1px 2px 1px #d3d3d3;border-radius:2px 2px 0 0}
+.goods_list li a{display:block}
+.goods_list li p{height:285px}
+.goods_list li img{width:234px;height:285px}
+.goods_list li .list_info{padding:0px 10px 9px 9px;height:60px;background:#fff;border:1px solid white;border-radius:0 0 2px 2px;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px}
+.goods_list li strong{color:#222;font-size:16px;letter-spacing:-1px;display:block; margin-bottom:0px !important;}
+.goods_list li strong span{color:#319f00}
+.goods_list li .list_info dl{padding-left:1px}
+.goods_list li dt{display:block;visibility:hidden;overflow:hidden;position:absolute;top:-1000em;left:0}
+.goods_list li dd{height:18px;line-height:18px;color:#767676; margin: 0px;}
+.elp {margin-bottom:0px;}
+
+.arrow{
+	color:white;
+	width:50px;
+	font-size:30px;
+	font-weight:bold;
+	background:none;
+}
+#prev{
+	position:absolute;
+	top:140px;
+	left:0px;
+	visibility:hidden;
+}
+#next{
+	position:absolute;
+	top:140px;
+	right:0px;
+	visibility:hidden;
+}
+
+div#srchEmpty{
+	 text-align:center; margin:100px auto; display:none;
+}

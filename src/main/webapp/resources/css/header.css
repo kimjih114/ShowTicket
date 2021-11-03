@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* 헤더 이미지*/
+#center-image{
+	position: absolute;
+    width: 200px;
+    top: -3px;
+}
+
+
+/*------------로그인 모달 css 부분-------------*/
+#header .login{border: solid 1px #d3d3d3;color: #777;font-weight: bold;background-color: white;}
+#loginModal .plusbody{padding: 30px 30px 30px 30px;}
+#loginModal .loginbtn{margin: 12px 0px 20px 150px;}
+#loginModal .loginsubmit{margin-right: 5px;}
+#loginModal .logincancel{font-family: 'Gothic A1', sans-serif;color: #8f01a3;border-color: #8f01a3;}
+#loginModal .find{text-align: center;}
+#loginModal .findcolor{color: #777;}
+
+/*------------로그인한 경우에 해당하는 css 부분-------------*/
+#header .logout{border: solid 1px #d3d3d3;color: #777;font-weight: bold;background-color: white; margin: -5px 7px 0 0;}
+#header #login .black{color: black;}
+
+/* 로그인 모달 css 부분 */
+#header .login{border: solid 1px #d3d3d3;color: #777;font-weight: bold;background-color: white;}
+#loginModal .plusbody{padding: 30px 30px 30px 30px;}
+#loginModal .loginbtn{margin: 12px 0px 20px 150px;}
+#loginModal .loginsubmit{margin-right: 5px;}
+#loginModal .logincancel{font-family: 'Gothic A1', sans-serif;color: #8f01a3;border-color: #8f01a3;}
+#loginModal .find{text-align: center;}
+#loginModal .findcolor{color: #777;}
+
+
+/*--------------- #cssH1 - 헤더 검색  부분--------------- */
+#header .search_area{position:relative;width:990px;margin:32px auto;font-size:0}
+#header .search_area .logo{width:137px;height:54px;position:absolute;top:-9px;left:0}
+#header .search_area .search{clear:both;width:334px;height:37px;margin-left:336px;border:1px solid #8f01a3}
+.material-icons {text-align:center;color: white;}
+#header .search #fieldsetS{height:35px;position:relative;margin: 0 0 0 0px; border: none;}
+#header .search input[type=text]{line-height:100%; position: absolute; top: 0px; left: 0px; width: 290px; height: 34px; border: none;}
+/* @media screen {#header .search input[type=text]{line-height:36px; position: absolute; top: 0px; left: 0px;}} *//* ie 8 */
+#header .search .btn_search{display:inline-block;background-color:#8f01a3;background-position:-206px 8px;width:40px;height:36px;padding:6px 6px 6px 10px;vertical-align:top;position:absolute;top:0;right:0;}
+
+/*---------------- #cssH2 메인헤더의 메뉴바 전체 부분 ----------------------*/
+
+/*---------------------------#cssH3 헤더 메뉴바 내용 부분-------------------------*/
+#header .menu .menu_tit {	
+	font-family: 'Gothic A1', sans-serif;
+	display: inline-block;	
+	margin: 0 auto;	
+	line-height: normal;	
+	vertical-align: middle;	
+	font-size: 16px;	
+	font-weight: bold;
+	color: black;	
+}
+#header .menu .menu_tit:hover {	
+	color: #8f01a3;	
+}	
+#header .menu .menu_tit_sm {	
+	font-size: 15px;	
+}
+/*----------------------------------------------------------------------------*/
+
+/*공통버튼*/
+.btn-color{
+	font-family: 'Gothic A1', sans-serif;
+	background-color: #8f01a3;
+	border: 1px solid #8f01a3;
+	color: white;
+}
+.btn-color:hover{
+	font-family: 'Gothic A1', sans-serif;
+	background-color: white;
+	border: 1px solid #8f01a3;
+	color: #8f01a3;
+}
+
+.btn-gray{
+	font-family: 'Gothic A1', sans-serif;
+	color: white;
+	background: #aaa;
+}
+.btn-gray:hover{
+	font-family: 'Gothic A1', sans-serif;
+	border-color: #bbb;
+	background: white;
+    color: #bbb;
+}

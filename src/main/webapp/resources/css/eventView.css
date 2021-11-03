@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+dd.evt_cont>div>img{margin-left: 13%; margin-right: 13%; width: 74%;}
+.evt_title h2 {font-size: 20px; margin-left: 10px;}
+dd.evt_title{margin-left: 13px;}
+h2 span{font-weight: bold; }
+.evt_detail .evt_title span{color:#8f01a3;}
+.nav-pills{width: 80%;margin-left: 10%; margin-top: 15px; margin-bottom: 15px;}
+dd.evt_date{margin-left: 10px; }
+div.rhr { border: 1px solid #e8e7e6; margin-top: 14px; margin-left: 3%;margin-right: 3%; background:#e8e7e6; }
+dl.evt_detail{background: white;margin-left: 70px;margin-right: 70px; border-radius: 3px;}
+dd.evt_date h6 span{color:#8f01a3;font-weight: bold;}
+dd.evt_date h6 {font-size: 13px;}
+div.event_cont_box{background:#e8e7e6; }
+div.container-t h2{ color:white; font-family: 'Gothic A1', sans-serif; font-weight: bold; font-size: 20px;  position: absolute;top: 142px; left: 27%;}
+ div.container-t h2 span{color:white;}
+dd.evt_cont div div.inner{margin-left: 18%; padding-top: 10px; padding-bottom: 10px;  }
+dd.evt_cont div div.inner h6{position: relative; text-align: center; width: 500px;} 
+
+
+
+

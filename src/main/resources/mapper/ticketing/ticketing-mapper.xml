@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ticketing">
+	<select id="selectMyPoint" resultType="int">
+		select point
+		from member
+		where member_id = #{memberId}
+	</select>
+	<insert id="insertTicket">
+        insert into ticket values
+        (seq_ticket_no.nextval, #{memberId},
+        #{ticketShowId}, #{resultPrice} , #{ticketGrade}, To_date(#{ticketDate}),
+         #{ticketPlace}, #{ticketCount}, sysdate, #{ticketSeat}, #{ticketDate}, sysdate+7, 'N', seq_pay_no.nextval,
+         #{ticketShowName})
+    </insert>
+</mapper>

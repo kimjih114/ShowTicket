@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+
+.color_purple{
+	color:#8f01a3 !important;
+}
+.small-font{
+	color:gray;
+	font-size:15px;
+	padding-left:3px;
+}
+.info_tit{
+	font-weight:bold;
+}
+
+#wait{
+ 	padding:5px;
+	margin-left:5px;
+	box-shadow: 0px 0px 1px 1px #d3d3d3;
+}
+#wait:hover{
+	cursor: pointer;
+}
+
+.detailbox_bot_left{
+	width:100% !important;
+	margin-right:0px;
+}
+
+.seat li{
+	clear:both;
+}
+
+#watchTime{
+	width:224px;
+	padding:5px;
+}
+
+button.reserve{
+	background-color:#8f01a3;
+	width:224px !important;
+}
+
+button.reserve.due{
+	background-color: #666;
+	width:224px !important;
+}
+
+.reserve span{
+	color:white;
+	font-weight:bold;
+	font-size:15px;
+	letter-spacing:3px;
+	font-family: 'Gothic A1', sans-serif;	
+}
+
+.detail_box_top .detail_info_right dl{
+	margin-bottom:5px !important;
+ 	padding-bottom: 5px !important;
+}
+
+.detail_tab{
+	margin-bottom:0px;
+}
+
+.detail_tab li{
+	width:247.5px !important;
+}
+.detail_box_bot{
+	position:relative !important;
+	height:2500px !important;
+}
+
+div.tabs-Num{
+	position:absolute !important;
+	top:48px;
+	left:0px;
+	display:none;
+	width:990px;
+}
+
+#tabs-1{
+	display:block;
+}
+#reviewContent{
+	height:50px !important;
+	width:765px !important;
+	padding:16px 18px 7px;
+}
+.star_review fieldset{
+	border:none;
+}
+button.btn_reply{
+	background-color:#8f01a3;
+	color:white;
+}
+
+.write_review{
+	padding-top:0px !important;
+	
+}
+.reviewOne{
+	position:relative;
+	padding: 15px 0 0px !important;
+	
+}
+.reviewId{
+	position: absolute;
+	top:11px;
+	left:123px;
+	font-size:1.5em;
+	font-family: 'Gothic A1', sans-serif;	
+	padding: 9px;
+	min-width:120px;
+}
+.review_list{clear: both;text-align:left; padding: 5px 5px;}
+
+
+.reviewContent{
+	padding:5px 5px 10px 5px;
+	letter-spacing: 2px;
+}
+#mReview{
+	background-color:#8f01a3;
+}
+#dReview{
+	background-color:#444;
+}
+.btns{
+	float:right;
+	padding-right:18px;
+    /* left: 733px; */
+}
+
+.datepicker table tr td.day {
+    color: #000;
+   	font-weight:bold;
+    background-color: #e9ceed;
+    border-color: #e9ceed;
+    border-radius: 0px;
+}
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+  	font-weight:normal;
+}
+.datepicker table tr td.day.active{
+	color: #fff;
+    background-color: #8f01a3 !important;
+    border-color: #8f01a3 !important;
+}
+
+
+
+
+#detailContainer {
+    background: none;
+    margin: 0;
+    min-height: 11000px;
+    /* height: 100%; */
+}
+
+
+.detail_box_bot .detailbox_bot_left .detail_cont {
+    clear: both;
+    text-align: center;
+    padding: 41px 30px 100px;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: #dedede;
+    min-height: 10000px;
+}
+
+
+#wrap {
+    clear: both;
+    overflow: hidden;
+    /* min-height: 100%; */
+    min-width: 990px;
+    /* height: 20000px; */
+}
+
+
+.fa-thumbs-up{color:#8f0ac3;font-size: 12px;}
+
+
+#checkLikes {
+	height: 20px;
+	min-width: 45px;
+	font-size: 12px;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background: white;
+	border: 1px solid gray;
+}

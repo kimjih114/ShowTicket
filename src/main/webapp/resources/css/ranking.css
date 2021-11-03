@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.ranking_wrap{ height: 1800px;}
+.basic_tbl table thead th{background: ;color: #767676;;font-size: 15px; border-radius: 1px;}
+div#container{font-weight: bold;}
+div.btn_lst{margin-left: 740px;}
+ul.rank_bx{font-family: 'Gothic A1', sans-serif;border:2px solid #a4a4a4; border-radius:3px; background: white;margin-top: 28px; margin-left: 60px;
+padding-top: 3px; padding-left: 3px;padding-bottom: 3px;margin-right: 60px;}
+td>button.btn-secondary{background-color: #8f01a3; border-color: #8f01a3; font-family:'돋음';font-size: 15px;}
+td>button.btn-secondary:hover{background-color: #8f01a3; border-color: #8f01a3;}
+span.ranknum{font-size: 30px; font-weight:bold; color: black;}
+.n_category{font-family: 'Gothic A1', sans-serif;font-size: 15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

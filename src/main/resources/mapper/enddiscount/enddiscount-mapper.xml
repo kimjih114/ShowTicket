@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="enddiscount">
+	
+	<select id="selectEdcList" resultMap="enddiscountMap">
+		select * from discount_delete where discount_end_date <![CDATA[
+<
+]]> sysdate order by discount_start_date asc
+	</select>
+	
+	
+	<resultMap type="map" id="enddiscountMap">
+		<id column="showid" property="showId"/>
+		<result column="discount_rate" property="discountRate"/>
+		<result column="discount_start_date" property="discountStartDate"/>
+		<result column="discount_end_date" property="discountEndDate"/>
+		<result column="discount_img" property="discountImg"/>
+		<result column="show_name" property="showName"/>
+		<result column="show_genre" property="showGenre"/>
+	</resultMap>
+</mapper>

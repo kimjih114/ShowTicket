@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <settings>
+  	<setting name="jdbcTypeForNull" value="NULL"/>
+  	<setting name="mapUnderscoreToCamelCase" value="true"/>
+	<setting name="returnInstanceForEmptyRow" value="true"/>
+  </settings>
+  
+  
+  <typeAliases>
+  	<typeAlias type="com.kh.showticket.member.model.vo.Member"
+  			   alias="member"/>
+  			   
+  	<typeAlias type="com.kh.showticket.member.model.vo.MyPoint"
+  			   alias="mypoint"/>
+
+  	<typeAlias type="com.kh.showticket.coupon.model.vo.Coupon"
+  			   alias="coupon"/>
+
+  	<typeAlias type="com.kh.showticket.help.model.vo.Notice"
+  		       alias="notice"/>
+  		       
+  	<typeAlias type="com.kh.showticket.help.model.vo.Faq"
+  		       alias="faq"/>
+
+  	<typeAlias type="com.kh.showticket.member.model.vo.Ticket"
+  			   alias="ticket"/>
+  		       
+  	<typeAlias type="com.kh.showticket.coupon.model.vo.MyCoupon"
+  			   alias="mycoupon"/>	 
+  			   
+  	<typeAlias type="com.kh.showticket.talk.model.vo.Msg"
+  			   alias="msg"/>
+
+	<typeAlias type="com.kh.showticket.admin.model.vo.Report"
+  			   alias="report"/>
+  			   
+  	<typeAlias type="com.kh.showticket.review.model.vo.Review"
+  			   alias="review"/>
+
+  	<typeAlias type="com.kh.showticket.common.typehandler.StringArrayTypeHandler"
+  			   alias="strArrTypeHandler"/>
+   
+  	<typeAlias type="com.kh.showticket.event.model.vo.Discount"
+  			   alias="discount"/>
+  			   
+  	<typeAlias type="com.kh.showticket.event.model.vo.Event"
+  			   alias="event"/>
+  			   
+
+  	<typeAlias type="com.kh.showticket.review.model.vo.Likes"
+  			   alias="likes"/>
+  	<typeAlias type="com.kh.showticket.event.model.vo.EventComment"
+  			   alias="eventComment"/>
+  			   
+  	<typeAlias type="com.kh.showticket.event.model.vo.EventVO"
+  			   alias="eventvoo"/>
+  			   
+  	<typeAlias type="com.kh.showticket.event.model.vo.Prizewinner"
+  			   alias="prizewinner"/>
+
+  	<!-- <typeAlias type="com.kh.spring.demo.model.vo.Dev" 
+  			   alias="dev"/>
+  	<typeAlias type="com.kh.spring.board.model.vo.BoardWithFileCount"
+  			   alias="boardWithFileCount"/>
+  	<typeAlias type="com.kh.spring.board.model.vo.BoardVO"
+  			   alias="boardvo"/>
+  	<typeAlias type="com.kh.spring.board.model.vo.Attachment"
+  			   alias="attachment"/> -->
+  </typeAliases>
+</configuration>

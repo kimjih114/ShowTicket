@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/*--------------신고글, 회원목록 css부분------------*/
+#container{margin: 30px auto;height: 720px;left: 165px;}
+div#report{border: 1px solid #8f01a3;text-align: center;height: 96%;width: 75%;position: absolute;left: 6%;}
+#report .inner{margin-left: 25px;margin-top: 20px; width: 95%;}
+#report .inner h2{text-align: left;}
+table#reporttbl{width: 90%;margin-left: 5%;margin-top: 25px;font-family: 'Gothic A1', sans-serif; font-size: 14px;}
+table#reporttbl thead>tr>th{background: #f0f0f0; font-family: 'Gothic A1', sans-serif; font-size:15px;}
+div.rhr{ border: 1px solid #a6a6a6; margin-top: 14px; width: 100%;}
+.cursor{cursor:pointer;}
+
+/* ------------왼쪽 상단의 nav바 css 부분-----------*/
+#myPageNavBar{width: 100px;text-align: center;left: 0;margin-left: 3.5%;position: absolute;font-family: 'Gothic A1', sans-serif;}
+#myPage{text-align:center;width:160px;height:80%;background-color : #8f01a3;padding:10px 10px 10px 10px;display:inline-block;margin-top: 28px;}
+#myPage label{color : white;font-size:18px;font-weight:bold;text-align:center;}
+#navBar{border : 0px;margin-left : 10px;font-size : 18px;margin-top : 20px;}
+#navBar td{border : 0px;width : 200px;height: 50px;color: gray;font-size:15px;}
+#navBar td:hover{color:#8f01a3;cursor:pointer;}
+.nav_top{margin-top: 3%;}
+.mnav_top{margin-top: 2%;}
+/* ------------신고 상세보기 css 부분---------- */
+table.detailTable{width: 90%;margin-left: 6%; margin-top: 25px; border-collapse: collapse;font-family: 'Gothic A1', sans-serif;font-size: 14px;}
+table.detailTable thead>tr>th{background: #f0f0f0; font-family: 'Gothic A1', sans-serif; font-size:15px;}
+table.detailTable td{padding-top: 5px; padding-bottom: 5px;}
+.border{border: 1px solid #d3d3d3;}
+.rNo{width: 50px;height: 45px;}
+.reason{width: 70%;}
+.rcontent{width: 50px;height: 325px;}
+.tbottom{margin-bottom: 35px;}
+.ttop{margin-top: 24px;}
+.rwidth{width: 27%;}
+.r_dbtn{width: 50px;height: 35px;border-radius: 4px;background-color: #6C757D;color: white;font-family: 'Gothic A1', sans-serif;font-size: 15px;background-color: #8f01a3;margin-right: 10px;}
+.rbtn{width: 45px;height: 30px;border-radius: 4px;background-color: #6C757D;color: white;font-family: 'Gothic A1', sans-serif;font-size: 13px;}
+
+/*-------------몇몇 공통 css 부분----------------*/
+.font{font-family: 'Gothic A1', sans-serif;font-size: 23px;}
+.font_size{font-size: 18px;}
+.btn_{width: 50px; height: 35px; font-size: 15px;}
+.deleteBtn{padding: 0px 0px 0px 0px !important; vertical-align: middle !important;}
+
+
+/*-------------검색 css 부분----------------*/
+.asearch_area{margin: 14px auto;float: right;margin-right: 50px;font-size: 0;}
+.asearch_area .asearch{clear:both;width:200px;height:37px;margin-left:336px;}
+.material-icons {text-align:center;color: white;}
+.asearch #fieldsetS{height:35px;position:relative;margin: 0 0 0 0px; border: none;}
+.asearch #fieldsets{height:35px;position:relative;margin: 0 0 0 0px; border: none;}
+.asearch input[type=text]{line-height:100%; position: absolute; top: 0px; left: 0px; width: 200px; height: 34px; border: none;border: 1px solid #8f01a3;border-radius: 3px;}
+/* @media screen {#header .search input[type=text]{line-height:36px; position: absolute; top: 0px; left: 0px;}} *//* ie 8 */
+.asearch .btn_search{display:inline-block;background-color:#8f01a3;background-position:-206px 8px;width:40px;height:34px;padding:6px 6px 6px 10px;vertical-align:top;position:absolute;top:0;right:0;border-radius: 3px;}
+.option_{width: 72px;height: 33px;display: inline;margin-top: 12px;float: left;margin-left: 5%;}
+
+
+
+
+
+
+

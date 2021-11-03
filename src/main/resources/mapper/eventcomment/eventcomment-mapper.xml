@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="eventcomment">
+
+	<insert id="insertComment">
+		insert into event_comment values
+		(seq_comment_no.nextval,#{eventNo},#{memberId},#{commentContent},sysdate)
+		<selectKey keyProperty="commentNo" resultType="_int" order="AFTER">
+			select seq_comment_no.currval from dual
+		</selectKey>
+	</insert>
+
+	<select id="eCommentList" resultType="eventComment">
+		 select * from event_comment where event_no=#{eventNo} order by comment_no desc
+	</select>
+	<delete id="eCommentDelete">
+		 delete from event_comment where comment_no=#{commentNo}
+	</delete>
+	
+
+	<select id="selectOneEventJoin" resultMap="eventC" parameterType="eventvoo">
+		select m.member_id,m.member_name, m.phone, e.comment_date 
+		from event_comment e join member m on e.member_id= m.member_id where e.event_no =#{eventNo}
+	</select>
+	
+
+	<resultMap type="eventvoo" id="eventC">
+		<id column="comment_no" property="comment_no"/>
+		<result column="eventNo" property="eventNo"/>
+		<result column="member_id" property="memberId"/>
+		<result column="comment_content" property="commentContent"/>
+		<result column="comment_date" property="CommentDate"/>
+
+		<collection property="memberList" ofType="member">
+				<id column="member_id" property="memberId"/>
+				<result column="password" property="password"/>
+				<result column="member_name" property="memberName"/>
+				<result column="email" property="email"/>
+				<result column="phone" property="phone"/>
+				<result column="member_119_count" property="member119Count"/>
+				<result column="enrolldate" property="enrollDate"/>
+				<result column="point" property="point"/>
+				<result column="member_grade" property="memberGrade"/>
+				<result column="birth" property="birth"/>
+				<result column="emailauthstatus" property="emailAuthstatus"/>
+		</collection>
+	</resultMap>
+	
+	
+	
+	
+</mapper>

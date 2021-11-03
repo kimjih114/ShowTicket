@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+
+#searchNav{
+	width:500px;
+	margin:39px auto;
+}
+
+.color_purple, .cPage{
+	color:#8f01a3 !important;
+}
+
+.bold{
+	font-weight:bold
+}
+
+.amount{
+	font-family: 'Gothic A1', sans-serif;
+	font-size: 1.8em;
+	margin: 39px 10px 0;
+}
+
+.amount h2{
+	margin-left:39px;
+}
+
+.resultTitle{
+	font-family: 'Gothic A1', sans-serif;
+	font-size:2.0em;
+	margin:60px 180px 0px;
+	display:block;
+}
+
+.resultInfo{
+	margin: 0 auto;
+	border:1px solid;
+	width:600px !important;
+	height: 250px;
+	position: relative;
+
+}
+.cont-result .pageBar{
+	text-align:center;
+}
+.cont-result .tbl-result{
+	margin:10px auto;
+}
+
+.cont-poster img{
+	 width: 175px;
+    height: 228px;
+	margin:10px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.ticketInfo, .eventInfo{
+	position: absolute;
+	top: 10px;
+	left: 195px;
+}
+
+.ticketInfo span, .eventInfo span {
+	padding-top: 10px;
+	display:block;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.ticketTitle, .eventTitle{
+	font-size:2em;
+	font-weight:bold;
+}
+.ticketLoc, .eventContent{
+
+	font-size:1.5em;
+	font-weight:bold;
+}
+.ticketDate, .ticketPrice, .eventDate{
+
+	font-size:1.2em;
+
+}
+
+button.reserve{
+	background-color:#8f01a3;
+	position:absolute;
+	top:200px;
+	left:500px;
+	border:none;
+}
+
+.td-result{
+	padding:15px;
+}
+
+.pageBar{
+	font-family: 'Gothic A1', sans-serif;
+	font-size: 2em;
+	margin:0 auto;
+	letter-spacing:10px;
+}
+
+#sResultCont{display:none;}

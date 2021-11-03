@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+	<resultMap type="review" id="reviewMap">
+	</resultMap>
+	
+	<select id="reviewList" resultMap="reviewMap">
+	select * from review
+	 where review_showid = #{reviewShowId}			
+						
+	</select>
+	<insert id="insertReview">
+		insert into review values
+		( seq_review_no.nextval, #{reviewShowId}, #{reviewWriter},
+		  #{reviewContent}, 0, #{reviewStar}, default)
+	
+	</insert>
+	
+	<select id="selectReviewStar" resultType="String">
+		select avg(review_star)
+		from review
+		where review_showId = #{playId} and review_star is not null
+	</select> 
+	
+	<delete id="deleteReview">
+		delete from review
+		where review_no = #{reviewNo}
+	</delete>
+	
+	<select id="checkLikes" resultType="_int">
+		select count(*)
+		from likes
+		where review_no = #{reviewNo} and
+		      likes_id = #{likesId}
+	</select>
+	<update id="downLikes">
+		update review set  
+		review_like = review_like - 1 
+		where review_no = #{reviewNo}
+	</update>
+	
+	<update id="upLikes">
+		update review set  
+		review_like = review_like + 1 
+		where review_no = #{reviewNo}
+	</update>
+	
+	<delete id="deleteLikes">
+		delete from likes
+		where review_no = #{reviewNo}
+		and likes_id = #{likesId}
+	</delete>
+	
+	<insert id="insertLikes">
+		insert into likes values
+		( seq_likes_no.nextval, #{likesId}, #{reviewNo})
+	</insert>
+	
+	<select id="totalReview" resultType="_int">
+		select count(*) from review
+		where review_showid = #{musicalId}
+	</select>
+			
+	<select id="selectOne" resultType="_int">
+		select review_like from review
+		where review_no = #{reviewNo}
+	</select>		
+	
+	<select id="likesList" resultType="likes">
+		select * from review 
+		where review_no = #{reviewNo}
+	</select>
+</mapper>

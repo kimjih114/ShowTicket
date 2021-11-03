@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+.nav-pills .nav-link.select {
+    color: #fff;
+    background-color: #8f01a3;
+	height: 42px;
+}
+
+.nav-pills .nav-font {
+    font: 15px bold;
+    padding: .7rem 1rem;
+    border-radius: 0;
+}
+.nav-pills .nav-link.default {
+	height: 42px;
+    color: #8f01a3;
+    border-left: 1px solid #8f01a3;
+    border: 1px solid;
+}
+
+/*아코디언 css*/
+			.accordionMenu {
+				margin: 0; 
+				padding: 10px;
+				width: 400px;
+				font-family: 'Gothic A1', sans-serif;
+				font-size: 15px;
+				background: #fff;
+				color: #424242;
+				/* border: 1px solid #000; */
+			}
+			.accordionMenu h1 {
+				margin: 0 0 20px 0;
+				font-family: Arial;
+				font-size: 20px;
+				/*text-shadow : x-offset값 y-offset값 blur값 color값; | none (그림자 속성해제)*/
+				filter: dropshadow(color=#aeaeae, offx=2, offy=2); /* IE6 ~ IE8 */
+			}
+			.accordionMenu h2 {
+				margin: 5px 0;
+				padding: 0;
+				font-family: 'Gothic A1', sans-serif;
+			}
+			
+			.accordionMenu :target h2 a,
+			 /* 클릭된 id 하위의 h2 a, .accordionMenu h2 a:active */
+			.accordionMenu h2 a:hover { 
+				/* .accordionMenu h2 a:focus */
+				background: #2288dd;
+				color: #fff;
+				background: -moz-linear-gradient(top, #6bb2ff, #2288dd); /*그라디언트 지정*/
+				background: #801fa3;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6bb2ff, endColorstr=#ff2288dd);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6bb2ff, endColorstr=#ff2288dd)";
+			}
+			
+			.accordionMenu h2 a {
+				display: block;
+				margin: 0;
+				padding: 10px;
+				font-family: Arial;
+				border: 1px solid #801fa3;
+				font-size: 15px;
+				font-weight: normal;
+				text-decoration: none;
+				background: #fff;
+				    color: #801fa3;
+			
+				border-radius: 5px;
+				-webkit-border-radius: 5px;
+				filter: dropshadow(color=#aeaeae, offx=2, offy=2);
+				background: -moz-linear-gradient(top, #cecece, #8f8f8f);
+				background:- webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8f8f8f));
+				/*
+				filter: progid:DXImageTransform.Microsoft.gradient (startColorstr=#ffcecece, endColorstr=#ff8f8f8f);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcecece, endColorstr=#f8f8f8f)";
+				*/
+			}
+			.accordionMenu #move {
+				margin: 0;
+				padding: 0 10px;
+				overflow: hidden;
+				height: 0; /* 초기의 높이 */
+			
+				transition: height 0.5s ease-in;
+				-webkit-transition: height 0.5s ease-in;
+				-moz-transition: height 0.5s ease-in;
+				-ms-transition: height 0.5s ease-in;
+				-o-transition: height 0.5s ease-in;
+				/* overflow-y:auto; */
+			}
+			.accordionMenu :target #move { /* 클릭된 id 하위의 p */
+				/* overflow: visible; */
+				/*overflow: auto; overflow: hidden; 해제 */
+				height: 170px;
+			}
+			
+			.accordionMenu #move2 {
+				margin: 0;
+				padding: 0 10px;
+				overflow: hidden;
+				height: 0; /* 초기의 높이 */
+			
+				transition: height 0.5s ease-in;
+				-webkit-transition: height 0.5s ease-in;
+				-moz-transition: height 0.5s ease-in;
+				-ms-transition: height 0.5s ease-in;
+				-o-transition: height 0.5s ease-in;
+				/* overflow-y:auto; */
+			}
+			.accordionMenu :target #move2 { /* 클릭된 id 하위의 p */
+				/* overflow: visible; */
+				/*overflow: auto; overflow: hidden; 해제 */
+				height: 210px;
+			}
+			
+		
+			/*-------------------------------*/
+			.btn8f{
+			    display: block;
+			    background-color: #fff;
+			    width: 100%;
+			    height: 45px;
+			    line-height: 42px;
+			    border-radius: 2px;
+			    border: 1px solid #8f01a3;
+			    text-align: center;
+			    font-size: 16px;
+			    color: #8f01a3;
+			    margin-top: 10px
+			
+			}
+			.btn8f:hover {
+    color: #fff;
+    background-color: #8f01a3;
+    border: 1px solid #8f01a3;
+}
+			
+	.iInput {
+	margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-sizing: border-box;
+    vertical-align: top;
+    font-size: 15px;
+    color: #202020;
+}
+}
+.inputEnter {
+    display: none;
+    padding: 5px 0 15px;
+}	
+		
+.resultBox h4 {
+    display: block;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #202020;
+}	
+.resultBox .id{
+    padding: 25px 0;
+}
+.resultBox * {
+    font-family: "Noto Sans KR", NanumGothic, "Malgun Gothic", "Apple SD Gothic Neo", dotum, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    font-size: 14px;
+}
+.resultBox {
+	margin: 0 20px;
+}	
+
+/*패스워드 일치 관련*/
+span.pw {display:none;font-size: 12px;}
+span.ok{color:green;}
+span.error{color:red;}

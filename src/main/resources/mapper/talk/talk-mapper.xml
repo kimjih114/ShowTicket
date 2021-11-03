@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="talk">
+	<select id="findChatIdByMemberId" resultType="string">
+		select chatid from chatroom
+		where status = 'Y' and memberid = #{memberId}
+	</select>
+	<insert id="insertChatRoom">
+		insert into chatroom(chatid, memberid)
+		values(#{chatId}, #{memberId})
+	</insert>
+	<insert id="insertChatLog">
+		insert into chatlog(chatno, chatid, memberid, msg, time)
+		values(seq_chatlog.nextval, #{chatId}, #{memberId}, #{msg}, #{time})
+	</insert>
+	<update id="updateLastCheck">
+		update chatroom set lastcheck = #{time}
+		where chatid = #{chatId} and memberid != 'ticket77' 
+	</update>
+	<select id="findChatListByChatId" resultMap="msgMap">
+		select * 
+		from chatlog
+		where chatid = #{chatId}
+		order by chatno
+	</select>
+	<resultMap type="map" id="msgMap">
+		<id column="chatno" property="chatNo" />
+		<result column="chatid" property="chatId" />
+		<result column="memberid" property="memberId" />
+		<result column="msg" property="msg" />
+		<result column="time" property="time" />
+	</resultMap>
+	<select id="findRecentList" resultType="map">
+
+select *
+from (
+    select chatno,
+        A.chatid, 
+        (select memberid from chatroom where A.chatid = chatid and memberid != 'ticket77') memberid, 
+        msg, 
+        time,
+        count(*) over(partition by A.chatid,A.memberid) cnt,
+        rank() over(partition by A.chatid order by time desc) rank
+    from chatlog A left join chatroom B
+        on A.chatid = B.chatid and A.memberid = B.memberid
+    where time > (select lastcheck from chatroom C where C.chatid = A.chatid and memberid = 'ticket77')
+    order by time desc) A
+where rank = 1
+union all
+select *
+from (
+    select chatno,
+        A.chatid, 
+        (select memberid from chatroom where A.chatid = chatid and memberid != 'ticket77') memberid,
+        msg, 
+        time,
+        0 cnt,
+        rank() over(partition by A.chatid order by time desc) rank
+    from chatlog A left join chatroom B
+        on A.chatid = B.chatid and A.memberid = B.memberid
+    order by time desc) A
+where rank = 1 and time <![CDATA[<=]]> (select lastcheck from chatroom C where C.chatid = A.chatid and memberid='ticket77')
+</select>
+</mapper>

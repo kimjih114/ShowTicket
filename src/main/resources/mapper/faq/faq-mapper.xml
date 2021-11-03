@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="faq">
+	
+	
+	<insert id="faqWriteEnd">
+		insert into faq values
+		( seq_faq_no.nextval, #{question}, #{answer}, #{type})
+	
+	</insert>
+	<resultMap type="faq" id="faqMap">
+	</resultMap>
+	 <select id="faqTicketList" resultMap="faqMap">
+		select *
+		from faq
+		<where>
+			<if test="type != '' and type != null">
+				type = #{type}			
+			</if>
+			<if test="question != '' and question != null">
+				question LIKE '%'||#{question}||'%' and
+
+			</if>
+			<if test="answer != '' and answer != null">
+				answer LIKE '%'||#{answer}||'%'		
+			</if>
+						
+		</where>
+		order by type desc
+	</select>
+	 <select id="faqList" resultMap="faqMap">
+		select *
+		from faq
+		
+			where	type = 'T'		
+		order by type desc
+	</select>
+	<select id="selectOne" resultMap="faqMap">
+		select *
+		from faq
+		where faq_no = #{faqNo}
+	</select>
+	
+	<update id="faqUpdateEnd">
+		update faq
+		<trim prefix="set" suffixOverrides=",">
+			<if test="type != null and type !=''">
+			type = #{type},
+			</if>
+			<if test="question != null and question !=''">
+			question = #{question},
+			</if>
+			<if test="answer != null and answer !=''">
+			answer= #{answer},
+			</if>
+		</trim>
+		
+		where faq_no = #{faqNo}
+	
+	</update>
+	
+	<delete id="faqDelete">
+	  delete from faq where faq_no = #{faqNo}
+	</delete>	
+</mapper>

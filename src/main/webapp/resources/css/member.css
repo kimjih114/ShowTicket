@@ -1,0 +1,572 @@
+@charset "UTF-8";
+#container{
+	position:relative;
+	font-family:"휴먼모음T";
+	padding:30px;
+}
+/* 회원가입페이지 */
+div#enroll-container{width:500px; margin:50px auto; text-align:center;}
+/* div#enroll-container input, div#enroll-container select {margin-bottom:10px;} */
+div#enroll-container table{margin: 0 auto;}
+div#enroll-container table th{text-align: right; padding-right:10px;font-size: 1rem;}
+div#enroll-container table td{text-align: left; border: none; padding: 10px; width: 360px;}
+.form-control {display: inline-block; width: 65%;}
+/*중복 아이디 체크 관련*/
+div#memberId-container{position:relative; padding:0px;}
+div#memberId-container span.guide {display:none;font-size: 12px;position:absolute; top:12px; left: 50%; }
+div#memberId-container span.ok{color:green;}
+div#memberId-container span.error{color:red;}
+
+/*패스워드 일치 관련*/
+div#password-container{position:relative; padding:0px;}
+div#password-container span.pw {display:none;font-size: 12px;position:absolute; top:12px; left: 50%; }
+div#password-container span.ok{color:green;}
+div#password-container span.error{color:red;}
+
+/*이메일 인증 관련*/
+div#emailAuthContainer p.ok{display:none;font-size: 12px; color:green;}
+div#phoneAuthContainer p.ok{display:none;font-size: 12px; color:green;}
+
+.star {
+    color: red;
+}
+#enroll-container input.btn{
+	margin: 30px 10px;
+}
+
+
+.div-memberFrm{
+	border: 1px solid #9a3cf4;
+	padding: 20px;
+	/* width: 80%; */
+	margin-left: 25%;
+	margin-top: -17px;
+	min-height: 500px;
+}
+/* 회원정보수정페이지 */
+#memberUpdateFrm {
+	text-align: center;
+}
+#memberUpdateFrm table {
+	border-top: 3px solid lightgray;
+	border-bottom: 3px solid lightgray;
+	border-collapse: collapse;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:7%;
+}
+#memberUpdateFrm table th{
+	font-size:16px;
+	padding-top : 7px;
+	padding-bottom:7px;
+}
+#memberUpdateFrm table td{
+	font-size:16px;
+	padding-top : 7px;
+	padding-bottom:7px;
+}
+#memberUpdateFrm table th, td {
+	border-bottom: 1px solid lightgray;
+	text-align: center;
+	color: gray;
+}
+#memberUpdateFrm table td .btn{
+	margin-left:auto;
+	margin-right:auto;
+}
+#memberUpdateFrm table checkbox{
+	margin-top : 10px;
+}
+#memberUpdateFrm table #check{
+	margin-top: 10px;
+}
+#memberUpdateFrm input {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#memberUpdateFrm .form-control {
+	width: 300px;
+	text-align: center;
+}
+
+#memberUpdateFrm .btn{
+    background-color: #9a3cf4;
+    border: 1px solid #9a3cf4;
+    color: white;
+    font-weight:bold;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+
+/* 쿠폰 페이지 */
+#coupon{
+	
+}
+#coupon>h5{
+	font-weight:bold;
+	font-size: 20px;
+	float : left;
+}
+#coupon>hr{
+	border : 2px solid lightgray;
+	margin-bottom:3px;
+}
+#coupon>#coupon-top{
+	font-size : 13px;
+	text-align:left;
+	margin-top : 0px;
+	margin-left:0px;
+}
+#buttonDownload{
+	float:right;
+	top : 60px;
+	width: 150px;
+	height : 30px;
+	color : white;
+	border-radius: 5px;
+	border : 0px;
+	background-color: #9a3cf4;
+	font-weight: bold;
+	font-size:15px;
+}
+#coupon #button1 {
+	width:50%;
+	height : 45px;
+	background-color: lightgray;
+	color : white;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+#coupon #button2 {
+	width:50%;
+	height : 45px;
+	background-color: white;
+	color : gray;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+#couponTable{
+	border-top : 2px solid #BDBDBD;
+	border-bottom : 2px solid #BDBDBD;
+	text-align:center;
+	width : 100%;
+	font-size : 15px;
+}
+#couponTable th{
+	background-color : #E6E6E6;	
+	border-bottom : 1px solid #BDBDBD;
+	padding-top : 10px;
+	padding-bottom: 10px;
+}
+#couponTable td{
+	border-bottom : 1px solid #BDBDBD;
+	text-align:center;
+	padding-top : 8px;
+	padding-bottom: 8px;
+}
+.pagination li{
+	width: 40px;
+	font-size : 20px;
+	color : gray;
+}
+#coupon #info{
+	background-color: #F2F2F2;
+	text-align:left;
+	padding-top : 10px;
+	padding-bottom:10px;
+	margin-bottom:20px;
+}
+
+#info h6{
+	font-weight:700;
+}
+#info li{
+	font-size:8px;
+	color:gray;
+}
+
+
+/* 포인트 페이지 */
+#point{
+
+}
+#point h5{
+	font-weight:bold;
+	font-size: 20px;
+	float : left;
+}
+#point hr{
+	border : 2px solid lightgray;
+	margin-top : 3px;
+}
+#myPoint{
+	width: 100%; 
+	height: 100px; 
+	background-color: #F2F2F2; 
+	margin-top:20px;
+}
+#myPoint .memberPoint{
+	font-size: 18px; 
+	font-weight: bold;  
+	margin-top: 7%; 
+	margin-left:25%;
+}
+
+#memberp{
+	font-size: 30px; 
+	color: #bb18ff; 
+	font-weight: bold; 
+	position: absolute; 
+	margin-top: 3%;
+	margin-left: 0%;
+}
+#p{
+	font-size: 30px; 
+	color: gray; 
+	font-weight: bold; 
+	position: absolute; 
+	margin-top: 3%;
+	margin-left: 8%;
+}
+#pointTable{
+	border-top:2px solid #D8D8D8;
+	border-bottom:2px solid #D8D8D8;
+	width : 90%;
+	text-align:center;
+	padding-top : 5px;
+	padding-bottom:5px;
+	font-size:15px;
+	
+}
+#pointTable th{
+	background-color:#F2F2F2;
+	font-weigth:bold;
+	border-bottom:1px solid ligthgray;
+	padding-top : 5px;
+	padding-bottom:5px;
+}
+#pointTable td{
+	padding-top : 5px;
+	padding-bottom:5px;
+	color:#424242;
+}
+#pointTable #playName{
+	width:160px;
+}
+
+/* 대기 공연 페이지 */
+#standby{
+	text-align:center;
+}
+#standby h5{
+	font-weight:bold;
+	color : #585858;
+}
+#standby hr{
+	 border: 2px solid lightgray; 
+	 margin-bottom: 3px;
+}
+#standby #button1 {
+	width:45%;
+	height : 45px;
+	background-color: lightgray;
+	color : white;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+#standby #button2 {
+	width:45%;
+	height : 45px;
+	background-color: white;
+	color : gray;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+.playList{
+	width:90%;
+	border-top: 1px solid #BDBDBD;
+	border-bottom: 1px solid #BDBDBD;
+	text-align:center;
+	margin:auto;
+	font-size:15px;
+}
+.playList th{
+	font-weight : 700;
+	border-bottom: 2px solid #E6E6E6;
+	color : #424242;
+	background-color : #E6E6E6;
+	height: 30px;
+}
+.playList tr{
+	border-bottom : 1.5px solid #E6E6E6;
+}
+.playList button{
+	height: 35px; 
+	background-color: #D8D8D8; 
+	color: #6E6E6E; 
+	font-weight: bold; 
+	border: 0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top : 5px;
+	margin-bottom: 5px;
+}
+.playList td{
+	align:center;
+}
+.page-link{
+	width:30px;
+	text-align:center;
+	font-weigth: bold;
+	font-size:20px;
+}
+
+
+/* 관심공연 */
+#interest{
+	text-align:center;
+}
+#interest h5{
+	font-weight:bold;
+	color : #585858;
+}
+#interest #button1 {
+	width:45%;
+	height : 45px;
+	background-color: lightgray;
+	color : white;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+#interest #button2 {
+	width:45%;
+	height : 45px;
+	background-color: white;
+	color : gray;	
+	border : 1px solid lightgray;
+	font-size: 15px;
+	font-weight:bold;
+}
+#InterestList{
+	width:90%;
+	border-top: 2px solid #BDBDBD;
+	border-bottom: 2px solid #BDBDBD;
+	text-align:center;
+	margin:auto;
+	font-size:15px;
+}
+#InterestList th{
+	font-weight : 700;
+	border-bottom: 2px solid #E6E6E6;
+	color : #424242;
+	background-color : #E6E6E6;
+	height: 30px;
+}
+#InterestList tr{
+	border-bottom : 1.5px solid #E6E6E6;
+}
+#InterestList button{
+	width: 70px; 
+	height: 33px; 
+	background-color: #D8D8D8; 
+	color: #6E6E6E; 
+	font-weight: bold; 
+	border: 0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top : 5px;
+	margin-bottom: 5px;
+}
+#InterestList td{
+	align:center;
+}
+
+/* 예매 확인/취소 */
+#reservation{
+
+}
+#reservation h5{
+	font-weight:bold;
+	color : #585858;
+}
+#search{
+	margin:0px;
+	padding:0px;
+	display : inline;
+}
+#search .btn-group button {
+	width:60px;
+	height:25px;
+	/* color : #424242;
+    background-color: white; */
+    border: 1px solid #8f01a3;
+    font-size:12px;
+    font-weight: normal;
+}
+/* #search button:hover {
+    background-color: #8f01a3;
+    color:white;
+} */
+#search #inputGroupSelect01{
+	width : 90px;
+	height:30px;
+	padding-top:3px;
+	color:#2E2E2E;
+}
+#search #inputGroupSelect02{
+	width : 80px;
+	height:30px;
+	padding-top:3px;
+	color:#2E2E2E;	
+}
+#search #inputGroupSelect03{
+	width : 70px;
+	height:30px;
+	padding-top:3px;
+	color:#2E2E2E;
+	margin:0px;
+}
+#dateSearch{
+	font-size : 16px;
+}
+#search button{
+	width : 50px;
+	font-size:15px;
+	background-color : white;
+	font-weight:bold;
+	border: 1px solid #BDBDBD;
+	margin-left:0px;
+	margin-right:0px;
+}
+#reservation #info{
+	background-color: #F2F2F2;
+	text-align:left;
+	padding-top : 10px;
+	padding-bottom:10px;
+	maring-bottom:20px;
+}
+#find{
+	width:70px;
+	height:30px;
+	border: 1px solid #8f01a3;
+	border-radius:5px;
+	background-color:white;
+	color:#8f01a3;
+	margin-right:5px;
+	float:right;
+}
+#find:hover {
+    background-color: #8f01a3;
+    color:white;
+}
+
+#info h6{
+	font-weight:700;
+}
+#info li{
+	font-size:8px;
+	color:gray;
+}
+#info img{
+	width:20px;
+}
+#ListTable{
+	border:2px solid #D8D8D8;
+	width : 100%;
+	text-align:center;
+	padding-top : 5px;
+	padding-bottom:5px;
+	font-size:15px;
+	
+}
+#ListTable th{
+	background-color:#F2F2F2;
+	font-weigth:bold;
+	border-bottom:1px solid ligthgray;
+	padding-top : 5px;
+	padding-bottom:5px;
+	border:1px solid lightgray;
+}
+#ListTable #num{
+	width:80px;
+}
+#ListTable #date{
+	width:100px;
+}
+#ListTable #Cancledate{
+	width:100px;
+}
+#ListTable #count{
+	width:40px;
+}
+#ListTable #state{
+	width:90px;
+}
+#ListTable td{
+	padding-top : 5px;
+	padding-bottom:5px;
+	color:#424242;
+	border:1px solid lightgray;
+	text-align:center;
+	font-weight:400;
+	
+}
+
+
+/* 비밀번호변경팝업 */
+div#updatePassword-container{width: 400px;}
+div#updatePassword-container img{width: 150px;margin-top: 10px;margin-left: 5px; }
+form#updatePFrm{margin-right: 80px;margin-left: 80px;margin-top: 30px;}
+input.btn.btn-outline-success{width: 80px;}
+input#btn_pwd{margin-right: 25px; margin-left: 25px;margin-right: 25px;}
+
+button#emailAuth{
+	border:1px solid;height: 35px; width: 57px; ;display: inline;
+	background-color: #8c008c;
+	margin:0px 2px !important;
+}
+input#email{
+	 width:240px !important; display:inline;
+}
+
+button#btn-emailAuth{
+	border:1px solid;height: 35px; width: 57px; ;display: inline;
+	background-color: #8c008c;
+	margin:0px 2px !important;
+}
+input#emailAuthCode{
+	 width:100px !important;
+	 display:inline;
+}
+
+div.authContainer{
+	 margin-top:3px;
+	 display:none;
+}
+
+
+#showWList{
+	display:none;
+}
+
+/*----기간별 조회 버튼 css 부분 */
+#search .r_btnSelect{background-color: #8f01a3;color:white;}
+#search .r_btnDefault{background-color: white;color : #424242;}
+
+.cancelBtn_{color: rgb(64, 64, 64);border: 1px solid rgb(224, 224, 224);border-radius: 2px;background-color: rgb(224, 224, 224);}
+
+
+#wNav{
+	margin-top: 20px !important;
+}
